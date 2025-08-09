@@ -1,0 +1,24 @@
+# VS/.NET
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+out/
+TestResults/
+*.log
+
+# Angular/Node
+ui/node_modules/
+ui/dist/
+ui/.angular/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Env
+*.env
+*.env.*
