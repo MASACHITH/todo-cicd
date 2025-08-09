@@ -12,7 +12,7 @@ jobs:
         with: { dotnet-version: 8.0.x }
       - run: dotnet restore
       - run: dotnet build --configuration Release --no-restore
-      - run: dotnet test Api.Tests/Api.Tests.csproj --no-build --verbosity normal
+      - run: dotnet test Api.Tests/Api.Tests.csproj --configuration Release --no-build --verbosity normal
 
   ui:
     runs-on: ubuntu-latest
