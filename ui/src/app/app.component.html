@@ -1,0 +1,22 @@
+<div class="container" style="max-width:720px;margin:2rem auto;">
+  <h2>Todo + Tags</h2>
+
+  <form (ngSubmit)="add()" #f="ngForm" style="display:flex;gap:.5rem;margin:.5rem 0;">
+    <input class="form-control" [(ngModel)]="title" name="title" placeholder="New todo..." required>
+    <button class="btn btn-primary" [disabled]="!title">Add</button>
+  </form>
+
+  <ul class="list-group">
+    <li *ngFor="let t of todos" class="list-group-item d-flex justify-content-between align-items-center">
+      <span>
+        <input type="checkbox" [checked]="t.done" (change)="toggle(t)">
+        <strong [style.textDecoration]="t.done ? 'line-through' : 'none'">{{t.title}}</strong>
+        <small *ngIf="t.tags?.length"> — {{t.tags.join(', ')}}</small>
+      </span>
+      <div>
+        <input #tag style="width:140px" placeholder="add tag">
+        <button class="btn btn-sm btn-outline-secondary" (click)="addTag(t, tag.value); tag.value=''">+ tag</button>
+      </div>
+    </li>
+  </ul>
+</div>
